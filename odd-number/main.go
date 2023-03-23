@@ -16,12 +16,12 @@ func main() {
 
 	input, _ := reader.ReadString('\n')
 
-	numbers := strings.Split(strings.TrimSpace(input), ",")
+	numbers := strings.Split(input, ",")
 
 	odds := make([]int, 0)
 
 	for _, v := range numbers {
-		num, err := strconv.Atoi(v)
+		num, err := strconv.Atoi(strings.TrimSpace(v))
 		if err != nil {
 			fmt.Println("error parsing number", v)
 			continue
